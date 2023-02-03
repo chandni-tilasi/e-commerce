@@ -29,8 +29,10 @@ function ProductDetails() {
     }
 
     return (
+        <>
+        <div className='forSpace'></div>
         <div className="singleCompo detailsCard">
-        
+       
        <div>
        <img src={details.image} />
         <div className='title' > {details.title} </div >
@@ -50,6 +52,7 @@ function ProductDetails() {
        
       
     </div>
+    </>
     )
 }
 

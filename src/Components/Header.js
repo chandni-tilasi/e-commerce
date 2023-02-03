@@ -6,7 +6,7 @@ import ItemContext from '../state/ItemContext';
 function Header() {
   const stateItem = useContext(ItemContext);
   const [text, setText] = useState("");
-  const [range, setRange] = useState(1000);
+  const [range, setRange] = useState(0);
 
   function changeHandler(e) {
     setText(e.target.value);
@@ -25,7 +25,8 @@ function Header() {
 
 
   return (
-
+   <>
+   {/* <div className='forSpace'></div> */}
     <div className='headerContainer'>
       <li> <Link to="/"> Home </Link> </li>
       <li> <Link to="/card"> Card {stateItem.card.length} </Link> </li>
@@ -39,6 +40,7 @@ function Header() {
         </div>
       </div>
     </div>
+    </>
   )
 }
 

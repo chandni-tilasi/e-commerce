@@ -4,6 +4,7 @@ import "../App.css"
 export default function Card() {
   const cardData = useContext(ItemContext);
   return <>
+  <div className='forSpace'></div>
    {
     cardData.card.map((ele)=>{
       return  <div className="singleCompo" style={{display:"flex"}}>

@@ -33,7 +33,7 @@ function Home() {
 
 
     if (!loader) {
-        return <h1 style={{ textAlign: "center", marginTop: "20px" }}>loading.....</h1>
+        return <h1 style={{ textAlign: "center", marginTop: "20px",display:"flex",justifyContent:"center",alignItems:"center",height:"40vh" }}>loading.....</h1>
     }
 
     return (

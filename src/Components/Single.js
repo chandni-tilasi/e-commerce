@@ -7,7 +7,7 @@ function Single(props) {
   
   return (<>
 
-    <div className="singleCompo">
+    <div className="singleCompo " id='single'>
       <Link to={`/productdetails/${props.item.id}`}>
 
         <img src={props.item.image} />
