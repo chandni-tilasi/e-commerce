@@ -33,11 +33,11 @@ function Header() {
       <div className='searchContainer'>
         <input className='searchBox' value={text} onChange={changeHandler} type="search" placeholder="search here" />
         <AiOutlineSearch style={{ fontSize: "20px" }} />
-        <div>
+        {/* <div>
           <input type="range" value={range} onChange={changeRange} step={50} min={0} max={1000} />
           {range}
 
-        </div>
+        </div> */}
       </div>
     </div>
     </>
