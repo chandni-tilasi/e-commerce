@@ -24,47 +24,48 @@
   transform: translateY(-10px) scale(1.05);
 } */
 
-.singleCompo img {
+.singleCompo img,
+.subDetailsContainer img {
   height: 200px;
   width: 200px;
+  object-fit: contain;
 }
-::placeholder{
+::placeholder {
   text-align: center;
 }
-.singleCompo .title{
-      color: #00425A;
-      font-weight: 500;
+.singleCompo .title,
+.subDetailsContainer .title {
+  color: #00425a;
+  font-weight: 500;
 }
 
-.singleCompo .btn{
+.singleCompo .btn,
+.subDetailsContainer button {
   height: 27px;
   width: 120px;
-  margin-top: 8px;
+  /* margin-top: 8px; */
   font-size: 15px;
-  background-color:rgb(222, 215, 215);
+  background-color: rgb(222, 215, 215);
   border-radius: 10px;
   color: black;
   cursor: pointer;
   border: 1px solid gray;
-  
 }
 
-.singleCompo .btn:hover{
+.singleCompo .btn:hover {
   background-color: #5ac7a3;
   font-weight: 500;
 }
-
 
 .homeCompo {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  
 }
 
 /* .............................header css............... */
 
-.headerContainer{
+.headerContainer {
   background-color: rgb(225, 216, 216);
   height: 100px;
   display: flex;
@@ -72,13 +73,11 @@
   justify-content: space-around;
   position: fixed;
   width: 100%;
-  
 }
-.headerContainer a{
+.headerContainer a {
   text-decoration: none;
-
 }
-.headerContainer  li{
+.headerContainer li {
   list-style: none;
   margin-top: 30px;
   font-weight: 500;
@@ -86,7 +85,19 @@
   transform: 2s;
 }
 
-.headerContainer a:hover{
+.headerContainer .logo {
+  height: 60%;
+  width: 70%;
+  margin-top: 0;
+  margin-bottom: none;
+}
+
+.headerContainer .logoLink {
+  margin-top: 0%;
+
+}
+
+.headerContainer a:hover {
   color: darkgreen;
   border: 5px solid gray;
   border-top: none;
@@ -94,6 +105,10 @@
   border-right: none;
 }
 
+.headerContainer .logoLink a:hover{
+border-bottom: none;
+
+}
 .searchBox{
   height: 25px;
   margin-top: -1px;
@@ -102,45 +117,95 @@
   
 }
 
-.searchContainer{
+.searchContainer {
+  
   margin-top: 31px;
   /* border: 2px gray solid; */
   height: 28px;
   background-color: white;
-}
-
-
-.detailsCard{
-  height:100vh;
-  width: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* margin-left: 500px;
-  margin-top: 100px; */
-  width: 600px;
-  height: 400px;
-  /* margin: 10%; */
-
-
-}
-
-.detailsCard p{
-  margin-top: 15px;
-  padding: 5px;
-}
-
-a{
-  text-decoration: none;
-}
-
-.forSpace{
-  height: 40px;
+ 
   
 }
 
-#single{
+.searchContainer .card{
+background-color: red;
+}
+
+/* ---------------------------------------details container------------------------------------- */
+.detailsCard {
+}
+
+.detailsCard .subDetailsContainer {
+  height: 65vh;
+  width: 40vw;
+  /* height: 90vh;
+  width: 80vw; */
+  border: 1px rgb(211, 211, 211) solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 8px 7px 5px rgb(189, 166, 166);
+  margin-top: 100px;
+  transition: transform 0.5s;
+  border-radius: 10px;
+  justify-content: space-evenly;
+  margin-left: 25%;
+}
+
+.subDetailsContainer h3 {
+  align-self: flex-start;
+  margin-left: 11%;
+  margin-bottom: 2%;
+  margin-top: 1%;
+  color: #534c4c;
+  /* display: inline; */
+  padding-right: 5px;
+  word-wrap: break-word;
+  text-align: center;
+  font-size: 100%;
+  width: 80%;
+  font-family: "Roboto", sans-serif;
+}
+
+/* .subDetailsContainer .btn {
+  margin-top: 2%;
+  height: 10%;
+  width: 20%;
+} */
+
+.subDetailsContainer .btn:hover {
+  background-color: rgb(1, 60, 1);
+  color: white;
+}
+
+/* ..........................  ................................. */
+a {
+  text-decoration: none;
+}
+
+.forSpace {
+  height: 40px;
+}
+
+#single {
   display: flex;
   justify-content: space-around;
+}
 
+@media screen and (max-width: 1010px) {
+  .detailsCard .subDetailsContainer {
+    width: 75vw;
+    height: 80vh;
+    margin-left: 25%;
+  }
+}
+
+@media screen and (max-width: 1459px) {
+  .detailsCard .subDetailsContainer {
+    width: 50vw;
+    height: 100vh;
+    margin-left: 25%;
+  }
 }

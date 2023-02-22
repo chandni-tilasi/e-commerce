@@ -43,7 +43,7 @@ function Home() {
 
                 (itemData.newApi.length !== 0) ? itemData.newApi.map((item) => {
 
-                    return <Single item={item} key={item.id} />
+                    return <Single item={item} key={item.id}  />
                 }) :
                     itemData.api.map((item) => {
 

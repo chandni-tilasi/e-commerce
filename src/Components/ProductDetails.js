@@ -1,59 +1,90 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import ItemContext from '../state/ItemContext';
+import React, { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import ItemContext from "../state/ItemContext";
+import { ToastContainer,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function ProductDetails() {
-    const params = useParams();
-    const [details, setDetails] = useState({});
-    const [loader,setLoader] = useState(false);
-    const itemData = useContext(ItemContext)
-
-    useEffect(() => {
-        (async function () {
-            try {
-                
-                const response = await fetch(`https://fakestoreapi.com/products/${params.id}`);
-                const data = await response.json();
-                setDetails(data);
-                setLoader(true);
-                console.log(details);
-
-            }
-            catch (err) {
-                console.log("errroorrr hai bhai yha par")
-            }
-        })();
-       
-    }, [])
-    if(!loader){
-        return <h1 style={{ textAlign: "center", marginTop: "20px" }}>  loading.... </h1>
-    }
-
-    return (
-        <>
-        <div className='forSpace'></div>
-        <div className="singleCompo detailsCard">
-       
-       <div>
-       <img src={details.image} />
-        <div className='title' > {details.title} </div >
-        <p>  {details.description} </p>
-        {
-        (itemData.card.includes(details))?<button className='btn' onClick={()=>{
-          itemData.cardUpdate(itemData.card.filter((c)=>c.id!==details.id))
-        }} >remove from card</button>:<button className='btn'
-        onClick={() => {
-          itemData.cardUpdate([...itemData.card, details])
-          
-        }}
-      > Add to card </button>
+  const params = useParams();
+  const [details, setDetails] = useState({});
+  const [loader, setLoader] = useState(false);
+  const itemData = useContext(ItemContext);
+const [clicked,setClicked] = useState(false);
+function clickHandle(){
+    setClicked(true);
+}
+  useEffect(() => {
+    (async function () {
+      try {
+        const response = await fetch(
+          `https://fakestoreapi.com/products/${params.id}`
+        );
+        const data = await response.json();
+        setDetails(data);
+        setLoader(true);
+        console.log(details);
+      } catch (err) {
+        console.log(err);
       }
+    })();
+  }, []);
+  if (!loader) {
+    return (
+      <h1 style={{ textAlign: "center", marginTop: "10px" }}> loading.... </h1>
+    );
+  }
 
-       </div>
-       
-      
-    </div>
+  return (
+    <>
+      <div className="forSpace"></div>
+      <div className=" detailsCard"   >
+        <div className="subDetailsContainer"  >
+          <img src={details.image} />
+          <div className="title"> {details.title} </div>
+          <h3> {details.description} </h3>
+          <div>
+            {details.price} <b>$</b>
+          </div>
+          <span> rating-{details.rating.rate} </span> <br />
+          {itemData.card.includes(details) ? (
+            <div className="btnContainer">
+              <button
+                className="btn"
+                onClick={() => {
+                  itemData.cardUpdate(
+                    itemData.card.filter((c) => c.id !== details.id)
+                  );
+                  toast.success("item removed from card!",{
+                    position: toast.POSITION.TOP_RIGHT,}
+                  )
+                }}
+              >
+                remove from card
+              </button>
+             
+            </div>
+          ) : (
+            <div className="btnContainer">
+              <button
+                className="btn"
+                onClick={() => {
+                  itemData.cardUpdate([...itemData.card, details]);
+                  toast.success("item added!",{
+                    position: toast.POSITION.TOP_RIGHT,}
+                  )
+                }}
+              >
+                {" "}
+                Add to card{" "}
+              </button>
+             
+            </div>
+          )}
+          {/* <button className="btn" onClick={clickHandle}>Buy Now</button> */}
+        </div>
+      </div>
+      <ToastContainer />
     </>
-    )
+  );
 }
 
-export default ProductDetails
+export default ProductDetails;
