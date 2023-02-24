@@ -73,6 +73,7 @@
   justify-content: space-around;
   position: fixed;
   width: 100%;
+  top:0;
 }
 .headerContainer a {
   text-decoration: none;
@@ -208,4 +209,20 @@ a {
     height: 100vh;
     margin-left: 25%;
   }
+}
+/* 
+---------------signin------------------------------ */
+
+
+.signin{
+  background-color: rgb(238, 38, 105);
+  height: 30%;
+  width: 10%;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+}
+
+.signin a{
+  color: white;
 }

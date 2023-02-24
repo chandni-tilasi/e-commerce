@@ -14,7 +14,7 @@ const ItemState = (props) => {
     setApi(data);
 
   }
-  console.log(api);
+ 
 
   const Textupdate = (items) => {
     setHeaderText(items);
