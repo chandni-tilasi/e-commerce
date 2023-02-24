@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemContext from "../state/ItemContext";
-import { ToastContainer,toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 function ProductDetails() {
   const params = useParams();
   const [details, setDetails] = useState({});
@@ -38,7 +38,7 @@ function clickHandle(){
       <div className="forSpace"></div>
       <div className=" detailsCard"   >
         <div className="subDetailsContainer"  >
-          <img src={details.image} />
+          <img src={details.image} alt="" />
           <div className="title"> {details.title} </div>
           <h3> {details.description} </h3>
           <div>
@@ -82,7 +82,7 @@ function clickHandle(){
           {/* <button className="btn" onClick={clickHandle}>Buy Now</button> */}
         </div>
       </div>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </>
   );
 }

@@ -2,8 +2,8 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Card from './Card'
 import ItemContext from '../state/ItemContext'
-import { ToastContainer,toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 function Single(props) {
   const itemData = useContext(ItemContext);
   
@@ -12,7 +12,7 @@ function Single(props) {
     <div className="singleCompo " id='single'>
       <Link to={`/productdetails/${props.item.id}`}>
 
-        <img src={props.item.image} />
+        <img src={props.item.image} alt="" />
         <div className='title' > {props.item.title} </div >
         <div>{props.item.price} <b>$</b></div>
         
@@ -33,7 +33,7 @@ function Single(props) {
 
 
     </div>
-<ToastContainer />
+{/* <ToastContainer /> */}
   </>)
 }
 

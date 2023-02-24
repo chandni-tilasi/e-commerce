@@ -8,6 +8,8 @@ import ProductDetails from './Components/ProductDetails';
 import ItemState from './state/ItemState';
 import SignUp from './Components/signInUp/SignUp';
 import SignIn from "./Components/signInUp/SignIn"
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     
@@ -26,6 +28,7 @@ function App() {
       </Router>
    
      </ItemState>
+     <ToastContainer />
     </div>
   )
 }

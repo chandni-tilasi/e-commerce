@@ -17,7 +17,7 @@ const SignUp = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     // TODO: add logic to submit the form
     e.preventDefault();
     localStorage.setItem("id", id);

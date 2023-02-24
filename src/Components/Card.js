@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import ItemContext from '../state/ItemContext'
-import { ToastContainer,toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 import "../App.css"
 import "./card.css"
 export default function Card() {
@@ -16,7 +16,7 @@ export default function Card() {
    {
     cardData.card.map((ele)=>{
       return  <div className="singleCompo" style={{display:"flex"}}>
-      <img src={ele.image} />
+      <img src={ele.image} alt="" />
       <div className='title' > {ele.title} </div>
       <div>{ele.price} <b>$</b></div>
         <span> rating-{ele.rating.rate} </span>
@@ -29,7 +29,7 @@ export default function Card() {
  </div>
     })
    }
-  <ToastContainer />
+  {/* <ToastContainer /> */}
   </div>
   </>
 }
