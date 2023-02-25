@@ -13,6 +13,7 @@ function Header() {
   // const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
 
   const stateItem = useContext(ItemContext);
+  
   const [text, setText] = useState("");
   const [range, setRange] = useState(0);
 
