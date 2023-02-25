@@ -11,6 +11,8 @@ export const userSlice = createSlice({
         setUserLoggedIn: (state, action) => {
             state.isLoggedIn = action.payload;
         },
+        
+
     },
 });
 

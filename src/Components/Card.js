@@ -4,6 +4,8 @@ import { toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 import "../App.css"
 import "./card.css"
+
+import { useSelector } from 'react-redux';
 export default function Card() {
   const cardData = useContext(ItemContext);
 
